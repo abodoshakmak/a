@@ -19,8 +19,8 @@ const somethingwentwrong = 'Something went wrong, try again';
 InputDecoration kInputDecoration(String label) {
   return InputDecoration(
       labelText: label,
-      contentPadding: EdgeInsets.all(10),
-      border: OutlineInputBorder(
+      contentPadding: const EdgeInsets.all(10),
+      border: const OutlineInputBorder(
           borderSide: BorderSide(width: 1, color: Colors.black)));
 }
 
@@ -32,7 +32,7 @@ TextButton kTextButton(String label, Function onPressed) {
           backgroundColor:
               MaterialStateColor.resolveWith((states) => Colors.grey),
           padding: MaterialStateProperty.resolveWith(
-              (states) => EdgeInsets.symmetric(vertical: 10))),
+              (states) => const EdgeInsets.symmetric(vertical: 10))),
       onPressed: () => onPressed(),
       child: Text(
         label,
@@ -47,7 +47,7 @@ Row kLoginRegisterHint(String text, String label, Function onTap) {
     children: [
       Text(text),
       GestureDetector(
-          child: Text(label, style: TextStyle(color: Colors.blue)),
+          child: Text(label, style: const TextStyle(color: Colors.blue)),
           onTap: () => onTap())
     ],
   );
@@ -62,7 +62,7 @@ Expanded kLikeAndComment(
       child: InkWell(
         onTap: () => onTap(),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
