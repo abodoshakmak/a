@@ -161,6 +161,12 @@ Future<ApiResponse> updateUser(String name, String? image) async {
   }
   return apiResponse;
 }
+// sacve
+Future<void> saveToken(String token) async {
+  final prefs = await SharedPreferences.getInstance();
+  await prefs.setString('token', token);
+}
+
 
 //get Token
 Future<String> getToken() async {
